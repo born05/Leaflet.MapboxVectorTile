@@ -373,7 +373,6 @@ module.exports = L.TileLayer.Canvas.extend({
     var ca = id.split(":");
     var canvasId = ca[1] + ":" + ca[2];
     if (typeof this._tiles[canvasId] === 'undefined') {
-      console.error("typeof this._tiles[canvasId] === 'undefined'");
       return;
     }
     var canvas = this._tiles[canvasId];
