@@ -56,14 +56,14 @@ StaticLabel.prototype.select = function() {
   this.selected = true;
   this.marker._icon.classList.add(this.style.cssSelectedClass || 'label-icon-text-selected');
   var linkedFeature = this.mvtFeature.linkedFeature();
-  if (!linkedFeature.selected) linkedFeature.select();
+  if (linkedFeature && !linkedFeature.selected) linkedFeature.select();
 };
 
 StaticLabel.prototype.deselect = function() {
   this.selected = false;
   this.marker._icon.classList.remove(this.style.cssSelectedClass || 'label-icon-text-selected');
   var linkedFeature = this.mvtFeature.linkedFeature();
-  if (linkedFeature.selected) linkedFeature.deselect();
+  if (linkedFeature && linkedFeature.selected) linkedFeature.deselect();
 };
 
 StaticLabel.prototype.remove = function() {
